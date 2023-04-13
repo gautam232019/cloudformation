@@ -4,9 +4,9 @@ pipeline {
         stage('Deploy CloudFormation Stack') {
             steps {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AKIAT5FXCZCM4HK5Q4MP', secretKeyVariable: '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']]) {
-                        sh '''
+                        sh '
                             aws cloudformation create-stack --stack-name my-stack --template-body file://cf.yml --region us-east-2
-                        '''
+                        '
                 }
             }
         }
