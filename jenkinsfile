@@ -1,10 +1,9 @@
 stage('Deploy CloudFormation Stack') {
     steps {
-        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AKIAT5FXCZCM4HK5Q4MP', secretKeyVariable: '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']]) {
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', ACCESS_KEY: 'AKIAT5FXCZCM4HK5Q4MP', SECRET_KEY: '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']]) {
             sh '''
                 aws cloudformation create-stack --stack-name my-stack --template-body file://cf.yaml --region us-east-2
             '''
-            
         }
     }
 }
