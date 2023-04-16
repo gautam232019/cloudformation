@@ -3,10 +3,10 @@ pipeline {
     stages{
         stage('Deploy CloudFormation Stack') {
             steps {
-                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AKIAT5FXCZCMT7FHPVUS', secretKeyVariable: '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']]) {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',credentialsId: "gautamawscreds"]]) {
                         sh '''
-                            ls
-                            '''
+                            aws cloudformation create-stack --stack-name my-stack --template-body file://cf.yml --region us-east-2
+                        '''
                 }
             }
         }
