@@ -4,9 +4,7 @@ pipeline {
         stage('Deploy CloudFormation Stack') {
             steps {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',credentialsId: "gautamawscreds"]]) {
-                        sh '''
-                            aws cloudformation create-stack --stack-name my-stack --template-body file://cf.yml --region us-east-2
-                        '''
+                        sh('aws sts get-caller-identity')
                 }
             }
         }
