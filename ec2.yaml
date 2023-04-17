@@ -1,0 +1,6 @@
+ImageId: ami-0103f211a154d64a6
+InstanceType: t2.micro
+TagsSpecifications:
+    Tags:
+      - Key: Name
+        Value: InstanceGautam
