@@ -2,7 +2,7 @@ ImageId: ami-0103f211a154d64a6
 InstanceType: t2.micro
 MaxCount: 1
 MinCount: 1
-TagsSpecifications:
+TagSpecifications:
     Tags:
       - Key: Name
         Value: InstanceGautam
