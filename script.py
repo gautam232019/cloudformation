@@ -16,7 +16,7 @@ myclient2 = boto3.client('ec2','us-east-2')
 with open('ec2.yaml','r') as e:
     mydata2 = yaml.load(e,Loader=yaml.FullLoader)
 
-myclient2.run_instance(**mydata2)
+myclient2.run_instances(**mydata2)
 
 
 
